@@ -17,9 +17,12 @@
 <br />
 <div align="center">
   <a href="https://github.com/yashasvijay/Nutritional-Helper">
-    <img src="nutrition.png" alt="Logo" width="80" height="80">
+    <img src="nutrition.png" alt="Logo" width="100" height="100">
   </a>
-  <a href="https://www.flaticon.com/free-icons/nutrition" title="nutrition icons">Nutrition icons created by Freepik - Flaticon</a>
+  <br />
+<a href="https://www.flaticon.com/free-icons/nutritionist" title="nutritionist icons">
+   Nutritionist icons created by Freepik - Flaticon
+  </a>
 
 <h3 align="center">Nutrition Helper</h3>
 
