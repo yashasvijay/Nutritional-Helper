@@ -1,0 +1,11 @@
+/* scanner.css */
+.scanner-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ADC178;
+    border: 1px solid #7B3532;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add specific styling for the scanner page content */
