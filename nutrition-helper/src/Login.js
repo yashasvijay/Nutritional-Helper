@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css"
+
 import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -21,32 +23,32 @@ function Login() {
     return (
     <div className="Login">
         <h1>Login</h1>
-      <Form onSubmit={handleSubmit}>
-          <Form.Group size="lg" controlId="email">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              autoFocus
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+        <Form onSubmit={handleSubmit}>
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                autoFocus
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
-          </Form.Group>
+            </Form.Group>
 
-          <Form.Group size="lg" controlId="password">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <Form.Group size="lg" controlId="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
 
-          </Form.Group>
+            </Form.Group>
 
-          <Button controlId="submitButton" block type="submit" disabled={!validateForm()}>
-            Login
-          </Button>
-      </Form>
+            <Button controlId="submitButton" block type="submit" disabled={!validateForm()}>
+              Submit
+            </Button>
+        </Form>
     </div>
   );
 }

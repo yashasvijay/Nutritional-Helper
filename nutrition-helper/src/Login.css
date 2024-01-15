@@ -1,15 +1,16 @@
 .Login {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color: #F0EAD2;
+    height: 100%;
 }
 
 h1 {
-    margin-top: 100px;
-    margin-bottom: 25px;
     display: flex;
     justify-content: center;
+    margin-bottom: 25px;
 }
 
 #email {
@@ -20,7 +21,9 @@ h1 {
     margin-bottom: 25px;
 }
 
-#submitButton {
-    
-}
+
+
+
+
+
 
