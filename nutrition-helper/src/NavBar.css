@@ -1,40 +1,43 @@
 .navigation {
-  height: 60px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding: 0.5rem 0rem;
-  background-color: #F0EAD2;
-  color: black;
-  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-}
-
-.brand-name {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    padding: 0.5rem 0rem;
+    background-color: #F0EAD2;
+    color: black;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+  
+  .brand-name {
     text-decoration: none;
     color: black;
     font-size: 1.3rem;
     margin-left: 1rem;
-}
-
-.navigation-menu {
+  }
+  
+  .navigation-menu {
     margin-left: auto;
-}
-.navigation-menu ul {
-  display: flex;
-  padding: 0;
-}
-.navigation-menu li {
-  list-style-type: none;
-  margin: 0 1rem;
-}
-.navigation-menu li a {
-  text-decoration: none;
-  display: block;
-  width: 100%;
-}
-
-.hamburger {
+  }
+  
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+  
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 1rem;
+  }
+  
+  .navigation-menu li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+  }
+  
+  .hamburger {
     border: 0;
     height: 40px;
     width: 40px;
@@ -48,48 +51,63 @@
     right: 25px;
     transform: translateY(-50%);
     display: none;
-}
-.hamburger:hover {
+  }
+  
+  .hamburger:hover {
     background-color: #DDE5B6;
-}
-
-@media screen and (max-width: 768px) {
+  }
+  
+  @media screen and (max-width: 800px) {
     .hamburger {
       display: block;
     }
-
+  
     .navigation-menu ul {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .navigation-menu ul {
+      flex-direction: column;
       position: absolute;
       top: 60px;
       left: 0;
-      flex-direction: column;
       width: 100%;
-      height: calc(100vh - 77px);
-      background-color: white;
+      height: calc(100vh - 60px);
+      background-color: #F0EAD2;
       border-top: 1px solid black;
+      display: none;
     }
+  
     .navigation-menu li {
       text-align: center;
       margin: 0;
     }
+  
     .navigation-menu li a {
       color: black;
       width: 100%;
       padding: 1.5rem 0;
     }
+  
     .navigation-menu li:hover {
-      background-color: #eee;
+      background-color: #ADC178;
     }
-  }
-
-  @media screen and (max-width: 768px) {
+  
     .navigation-menu.expanded ul {
       display: block;
     }
   }
+
+.home1{
+    color: black;
+}
+.label1{
+    color: black;
+}
+.macro1{
+    color: black;
+}
+.allergen1{
+    color: black;
+}
+.login1{
+    color: black;
+}
+
+  

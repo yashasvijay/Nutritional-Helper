@@ -1,20 +1,21 @@
-// Navbar.js
 import { useState } from "react";
-import "./NavBar.css"
-import Login from "./Login.js"
-export default function NavBar() {
-  const [isNavExpanded, setIsNavExpanded] = useState(false)
+import "./NavBar.css";
+
+export default function Navbar() {
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
     <nav className="navigation">
       <a href="/" className="brand-name">
         Nutritional Helper
       </a>
-      <button className="hamburger" onClick={() => {
+      <button
+        className="hamburger"
+        onClick={() => {
           setIsNavExpanded(!isNavExpanded);
         }}
       >
-        {/* icon from heroicons.com */}
+        {/* icon from Heroicons.com */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -29,22 +30,25 @@ export default function NavBar() {
         </svg>
       </button>
       <div
-        className="navigation-menu">
+        className={
+          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+        }
+      >
         <ul>
           <li>
-            <a href="/home">Home</a>
+            <a className="home1" href="/home">Home</a>
           </li>
           <li>
-            <a href="/about">Label Scanner</a>
+            <a className="label1" href="/label-scanner">Label Scanner</a>
           </li>
           <li>
-            <a href="/contact">Macro-Tracker</a>
+            <a className="macro1" href="/macro-tracker">Macro-Tracker</a>
           </li>
           <li>
-            <a href="/contact">Allergen-Tracker</a>
+            <a className="allergen1" href="/allergen-tracker">Allergen-Tracker</a>
           </li>
           <li>
-            <a href="Login">Login</a>
+            <a className="login1" href="/login">Login</a>
           </li>
         </ul>
       </div>

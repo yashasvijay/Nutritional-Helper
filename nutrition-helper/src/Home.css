@@ -19,8 +19,13 @@ body {
   margin-right: auto;
   margin-left: auto;
   padding: 1rem;
+  background-color: #DDE5B6;
 }
 
 article h1 {
   margin: 1rem 0;
+}
+
+.all{
+  background-color: #DDE5B6;
 }
