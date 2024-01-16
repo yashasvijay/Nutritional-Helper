@@ -1,15 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
-
 import Button from "react-bootstrap/Button";
-
 import "./Login.css";
-
-import Allergen from "./Allergens";
-
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -24,11 +17,7 @@ function Login() {
     event.preventDefault();
     }
 
-    let navigate = useNavigate();
-    const routeChange = () =>{
-      let path = 'allergens';
-      navigate(path);
-    }
+    const navigate = useNavigate();
 
     return (
     <div className="Login">
@@ -55,7 +44,7 @@ function Login() {
 
             </Form.Group>
 
-            <Button controlId="submitButton" block type="submit" disabled={!validateForm()} onClick={routeChange}>
+            <Button controlId="submitButton" block type="submit" disabled={!validateForm()} onClick={() => navigate('allergens')}>
               Submit
             </Button>
         </Form>

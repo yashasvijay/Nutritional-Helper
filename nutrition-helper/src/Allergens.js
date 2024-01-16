@@ -1,7 +1,12 @@
 import BasicNavBar from "./NavBar";
 
-function Allergens (){
-    <BasicNavBar />
+const Allergens = () => {
+    <div class="Allergens">
+        <BasicNavBar />
+        <h1>
+            Allergens
+        </h1>
+    </div>
 }
 
 export default Allergens;
