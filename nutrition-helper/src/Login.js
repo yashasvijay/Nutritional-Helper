@@ -44,7 +44,7 @@ function Login() {
 
             </Form.Group>
 
-            <Button controlId="submitButton" block type="submit" disabled={!validateForm()} onClick={() => navigate('allergens')}>
+            <Button controlId="submitButton" block type="submit" disabled={!validateForm()} onClick={() => navigate('home')}>
               Submit
             </Button>
         </Form>

@@ -1,12 +1,15 @@
 import BasicNavBar from "./NavBar";
+import "./Allergens.css";
 
-const Allergens = () => {
-    <div class="Allergens">
-        <BasicNavBar />
-        <h1>
-            Allergens
-        </h1>
-    </div>
+function Allergens() {
+    return (
+        <>
+            <BasicNavBar />
+            <div class="Allergens">
+                <h1>Allergens</h1>
+            </div>
+        </>
+    )
 }
 
 export default Allergens;
