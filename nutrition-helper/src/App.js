@@ -22,9 +22,13 @@ class App extends Component{
   }
 
 async addClick(){
-  var newItems=document.getElementById("newItems").value;
   const data=new FormData();
+
+  var newItems=document.getElementById("newItems").value;
   data.append("newItems",newItems);
+  
+  var newCals=document.getElementById("newCals").value;
+  data.append("newCals",newCals);
 
   fetch("http://localhost:9000/additems",{
     method:"POST",
@@ -51,8 +55,11 @@ render() {
   return (
     <div className="App">
       <h2>DATABASE</h2>
-        <input id="newItems"/>&nbsp;
-        <button onClick={()=>this.addClick()}>Add</button>
+        <input id="newItems" placeholder="Enter Name of Food"/>
+        <br></br>
+        <input id="newCals" placeholder="Enter Calories"/>
+        <br></br>
+        <button onClick={()=>this.addClick()}>Submit</button>
       {items.map(item=>
         <p>
           <b>Name: {item.name}... Calories: {item.calories}</b>&nbsp;

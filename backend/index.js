@@ -29,7 +29,7 @@ app.post('/additems',multer().none(),(request,response)=>{
         database.collection("items").insertOne({
             id:(numOfDocs+1).toString(),
             name:request.body.newItems,
-            calories:request.body.newCal
+            calories:request.body.newCals
         });
         response.json("Added Successfully");
     })
