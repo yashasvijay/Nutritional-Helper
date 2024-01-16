@@ -8,6 +8,10 @@ import Button from "react-bootstrap/Button";
 
 import "./Login.css";
 
+import Allergen from "./Allergens";
+
+import { useNavigate } from "react-router-dom";
+
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -18,6 +22,12 @@ function Login() {
 
     function handleSubmit(event) {
     event.preventDefault();
+    }
+
+    let navigate = useNavigate();
+    const routeChange = () =>{
+      let path = 'allergens';
+      navigate(path);
     }
 
     return (
@@ -45,7 +55,7 @@ function Login() {
 
             </Form.Group>
 
-            <Button controlId="submitButton" block type="submit" disabled={!validateForm()}>
+            <Button controlId="submitButton" block type="submit" disabled={!validateForm()} onClick={routeChange}>
               Submit
             </Button>
         </Form>
