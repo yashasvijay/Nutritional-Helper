@@ -8,7 +8,7 @@ app.use(cors());
 
 var CONNECTION_STRING="mongodb+srv://user:careerlaunch@cluster0.gu4zxwb.mongodb.net/";
 
-var DATABASENAME="food";
+var DATABASENAME="users";
 var database;
 
 app.listen(9000,()=>{
@@ -28,8 +28,8 @@ app.post('/additems',multer().none(),(request,response)=>{
     database.collection("items").count({},function(error,numOfDocs){
         database.collection("items").insertOne({
             id:(numOfDocs+1).toString(),
-            name:request.body.newItems,
-            calories:request.body.newCals
+            username:request.body.newUsers,
+            password:request.body.newPass
         });
         response.json("Added Successfully");
     })
