@@ -1,4 +1,5 @@
 var Express = require("express");
+//const {MongoClient} = require('mongodb');
 var Mongoclient=require("mongodb").MongoClient;
 var cors=require("cors");
 const multer=require("multer");
@@ -11,10 +12,12 @@ var DATABASENAME="users";
 var database;
 
 app.listen(9000,()=>{
+    console.log("Successful");
     Mongoclient.connect(CONNECTION_STRING,(error,client)=>{
         database=client.db(DATABASENAME);
         console.log("Mongo DB Connection Successful");
     });
+    console.log("Connected");
 })
 app.get('/getitems',(request,response)=>{
     database.collection("items").find({}).toArray((error,result)=>{

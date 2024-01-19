@@ -95,12 +95,6 @@ async deleteClick(id){
             <input id="newPass" textAlign='center' placeholder="Enter Password"/>
             <br></br>
             <button onClick={()=>this.addClick()}>Submit</button>
-          {items.map(item=>
-            <p>
-              <b>Username: {item.username} Password: {item.password}</b>&nbsp;
-              <button onClick={()=>this.deleteClick(item.id)}>Delete</button>
-            </p>
-          )}
         </div>
         <div className="login-wrapper">
         <h2>LOG IN</h2>
@@ -117,3 +111,11 @@ async deleteClick(id){
 
 export default Login
 
+/*
+{items.map(item=>
+  <p>
+    <b>Username: {item.username} Password: {item.password}</b>&nbsp;
+    <button onClick={()=>this.deleteClick(item.id)}>Delete</button>
+  </p>
+)}
+*/
