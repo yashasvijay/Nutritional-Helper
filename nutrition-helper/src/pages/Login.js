@@ -1,13 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-/*
-import React, { useState } from "react";
-import PropTypes from 'prop-types';
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
-*/
 import "./Login.css";
-import { Component } from 'react';
+import { Component} from 'react';
+import { Navigate, Link } from "react-router-dom";
 
 class Login extends Component {
 
@@ -20,6 +14,7 @@ class Login extends Component {
   componentDidMount(){
     this.refreshItems();
   }
+
   async refreshItems(){
     fetch("http://localhost:9000/getitems").then(response=>response.json())
     .then(data=>{
@@ -34,6 +29,7 @@ async addClick2(){
   const isDuplicate2 = this.state.items.some(item => item.password === newPass2);
   if (isDuplicate && isDuplicate2) {
     alert('Logged In!');
+    <Navigate to="/home" replace={true} />
   }
   else {
     alert("Username/Password Not Found");
@@ -78,12 +74,6 @@ async deleteClick(id){
   })
 }
 
-/* 
-  <Route element={<PrivateRoutes />}>
-      
-  </Route>
-*/
-
   render() {
     const{items}=this.state;
     return (
@@ -98,11 +88,11 @@ async deleteClick(id){
         </div>
         <div className="login-wrapper">
         <h2>LOG IN</h2>
-            <input id="newUsers2" textAlign='center' placeholder="Username"/>
+            <input id="newUsers2" textAlign='center' placeholder="Enter Username"/>
             <br></br>
-            <input id="newPass2" textAlign='center' placeholder="Password"/>
+            <input id="newPass2" textAlign='center' placeholder="Enter Password"/>
             <br></br>
-            <button onClick={()=>this.addClick2()}>Submit</button>
+            <Link class="button" to="/home" onClick={()=>this.addClick2()} >Submit</Link>
         </div>
     </section>
     );

@@ -4,9 +4,6 @@ import Allergens from '../pages/Allergens.js';
 import Macros from '../pages/Macros';
 import Home from '../pages/Home';
 import Scanner from '../pages/Scanner.js';
-/*
-import PrivateRoutes from './PrivateRoutes.js';
-*/
 import './App.css';
 
 const App = () => {

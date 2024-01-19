@@ -23,6 +23,19 @@
     color: black;
 }
 
+.button {
+    text-decoration: none;
+    padding: 8px 23px 8px 23px;
+    border: 2px solid #333333;
+    margin-bottom: 25px;
+    height: 38px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: #DDE5B6;
+    font-size: 16px;
+    color: black;
+}
+
 .front-page input {
     box-sizing: border-box;
     height: 39px;
