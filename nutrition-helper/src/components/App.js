@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import Login from './Login.js';
-import Allergens from './Allergens.js';
-import Macros from './Macros';
-import Home from './Home';
-import Scanner from './Scanner';
+import Login from '../pages/Login.js';
+import Allergens from '../pages/Allergens.js';
+import Macros from '../pages/Macros';
+import Home from '../pages/Home';
+import Scanner from '../pages/Scanner.js';
 import PrivateRoutes from './PrivateRoutes.js';
 
 const App = () => {
