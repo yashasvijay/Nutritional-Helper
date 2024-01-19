@@ -1,25 +1,42 @@
-.login-wrapper {
+.front-page {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: horizontal;
     align-items: center;
     background-color: #F0EAD2;
     height: 100%;
 }
 
-h1 {
+.front-page h2 {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
 }
 
-#email {
-    margin-bottom: 10px;
+.front-page button {
+    margin-bottom: 25px;
+    height: 38px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: #DDE5B6;
+    font-size: 16px;
+    color: black;
 }
 
-#password {
+.front-page input {
+    box-sizing: border-box;
+    height: 39px;
+    width: 300px;
+    border: 1px solid #E6E6E6;
+    border-radius: 20px;
     margin-bottom: 25px;
 }
+
+.signup-wrapper {
+    margin-right: 300px;
+}
+
+
 
 
 

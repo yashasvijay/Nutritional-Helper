@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 
 const cors = require('cors');
@@ -13,3 +14,4 @@ app.use('/', (req, res) => {
 });
 
 app.listen(9000, () => console.log('API is running on http://localhost:9000/'));
+*/

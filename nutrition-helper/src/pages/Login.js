@@ -1,87 +1,119 @@
 import "bootstrap/dist/css/bootstrap.min.css"
+/*
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "./Login.css";
 import { useNavigate } from "react-router-dom";
+*/
+import "./Login.css";
+import { Component } from 'react';
 
-async function loginUser(credentials) {
+class Login extends Component {
 
-  return fetch('http://localhost:9000', {
- 
-    method: 'POST',
- 
-    headers: {
- 
-      'Content-Type': 'application/json'
- 
-    },
- 
-    body: JSON.stringify(credentials)
- 
+  constructor(props){
+    super(props);
+    this.state={
+      items:[]
+    }
+  }
+  componentDidMount(){
+    this.refreshItems();
+  }
+  async refreshItems(){
+    fetch("http://localhost:9000/getitems").then(response=>response.json())
+    .then(data=>{
+      this.setState({items:data});
+    })
+  }
+
+async addClick2(){
+  const newUsers2 = document.getElementById("newUsers2").value;
+  const newPass2 = document.getElementById("newPass2").value;
+  const isDuplicate = this.state.items.some(item => item.username === newUsers2);
+  const isDuplicate2 = this.state.items.some(item => item.password === newPass2);
+  if (isDuplicate && isDuplicate2) {
+    alert('Logged In!');
+  }
+  else {
+    alert("Username/Password Not Found");
+  }
+}
+
+async addClick(){
+  const data=new FormData();
+
+  var newUsers=document.getElementById("newUsers").value;
+  data.append("newUsers",newUsers);
+
+  var newPass=document.getElementById("newPass").value;
+  data.append("newPass",newPass);
+
+  const isDuplicate = this.state.items.some(item => item.username === newUsers);
+  if(isDuplicate){
+    alert("Username Taken");
+  }
+  else if(newUsers === "" || newPass ==="") {
+    alert("Invalid Username/Password");
+  }
+  else {
+    fetch("http://localhost:9000/additems",{
+      method:"POST",
+      body:data
+    }).then(res=>res.json())
+    .then((result)=>{
+      alert(result);
+      this.refreshItems();
+    })
+  }
+}
+
+async deleteClick(id){
+  fetch("http://localhost:9000/deleteitems?id="+id,{
+    method:"DELETE",
+  }).then(res=>res.json())
+  .then((result)=>{
+    alert(result);
+    this.refreshItems();
   })
- 
-    .then(data => data.json())
- 
- }
+}
 
-function Login({ setToken }) {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+/* 
+  <Route element={<PrivateRoutes />}>
+      
+  </Route>
+*/
 
-    function validateForm() {
-      return email.length > 0 && password.length > 0 && email.includes('@') && email.includes('.com');
-    }
-
-    const handleSubmit = async e => {
-      e.preventDefault();
-      const token = await loginUser({
-        email,
-        password
-      });
-      setToken(token);
-    }
-
-    const navigate = useNavigate();
-
+  render() {
+    const{items}=this.state;
     return (
-    <div className="login-wrapper">
-        <h1>Log In</h1>
-        <Form onSubmit={handleSubmit}>
-            <Form.Group size="lg" controlId="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                autoFocus
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-
-            </Form.Group>
-
-            <Form.Group size="lg" controlId="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-
-            </Form.Group>
-
-            <Button controlId="submitButton" block type="submit" disabled={!validateForm()} onClick={() => navigate('home')}>
-              Submit
-            </Button>
-        </Form>
-    </div>
-  );
-}
-
-Login.propTypes = {
-
-  setToken: PropTypes.func.isRequired
-
-}
+      <section className="front-page">
+        <div className="signup-wrapper">
+          <h2>SIGN UP</h2>
+            <input id="newUsers" textAlign='center' placeholder="Enter Username"/>
+            <br></br>
+            <input id="newPass" textAlign='center' placeholder="Enter Password"/>
+            <br></br>
+            <button onClick={()=>this.addClick()}>Submit</button>
+          {items.map(item=>
+            <p>
+              <b>Username: {item.username} Password: {item.password}</b>&nbsp;
+              <button onClick={()=>this.deleteClick(item.id)}>Delete</button>
+            </p>
+          )}
+        </div>
+        <div className="login-wrapper">
+        <h2>LOG IN</h2>
+            <input id="newUsers2" textAlign='center' placeholder="Username"/>
+            <br></br>
+            <input id="newPass2" textAlign='center' placeholder="Password"/>
+            <br></br>
+            <button onClick={()=>this.addClick2()}>Submit</button>
+        </div>
+    </section>
+    );
+  }
+};
 
 export default Login
+
