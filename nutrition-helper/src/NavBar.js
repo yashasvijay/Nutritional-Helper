@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./NavBar.css";
+import icon from './images/icon1.png'
 
 export default function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
     <nav className="navigation">
+      <img className="icon" src={icon} alt="Description" />
       <a href="/" className="brand-name">
         Nutritional Helper
       </a>
@@ -36,19 +38,19 @@ export default function Navbar() {
       >
         <ul>
           <li>
-            <a className="home1" href="/home">Home</a>
+            <a className="Home" href="/Home">Home</a>
           </li>
           <li>
-            <a className="label1" href="/label-scanner">Label Scanner</a>
+            <a className="Scanner" href="/Scanner">Scanner</a>
           </li>
           <li>
-            <a className="macro1" href="/macro-tracker">Macro-Tracker</a>
+            <a className="Macros" href="/Macros">Macro-Tracker</a>
           </li>
           <li>
-            <a className="allergen1" href="/allergen-tracker">Allergen-Tracker</a>
+            <a className="Allergens" href="/Allergens">Allergen-Tracker</a>
           </li>
           <li>
-            <a className="login1" href="/login">Login</a>
+            <a className="Login" href="/">Login</a>
           </li>
         </ul>
       </div>

@@ -1,12 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
-
 import Button from "react-bootstrap/Button";
-
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -19,6 +16,8 @@ function Login() {
     function handleSubmit(event) {
     event.preventDefault();
     }
+
+    const navigate = useNavigate();
 
     return (
     <div className="Login">
@@ -45,7 +44,7 @@ function Login() {
 
             </Form.Group>
 
-            <Button controlId="submitButton" block type="submit" disabled={!validateForm()}>
+            <Button controlId="submitButton" block type="submit" disabled={!validateForm()} onClick={() => navigate('home')}>
               Submit
             </Button>
         </Form>

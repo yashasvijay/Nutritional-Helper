@@ -2,16 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Login from './Login.js';
-import Home from './Home.js';
-import NavBar from './NavBar.js';
+import App from './App.js';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <body>
-      <Home />
-    </body>
+    <BrowserRouter>
+      <body>
+          <App />
+      </body>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
