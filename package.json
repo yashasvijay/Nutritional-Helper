@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mdb-react-ui-kit": "^7.1.0",
+    "tesseract.js": "^2.1.1"
+  }
+}
