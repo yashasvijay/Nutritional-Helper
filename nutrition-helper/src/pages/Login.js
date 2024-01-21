@@ -77,24 +77,27 @@ async deleteClick(id){
   render() {
     const{items}=this.state;
     return (
-      <section className="front-page">
-        <div className="signup-wrapper">
-          <h2>SIGN UP</h2>
-            <input id="newUsers" textAlign='center' placeholder="Enter Username"/>
-            <br></br>
-            <input id="newPass" textAlign='center' placeholder="Enter Password"/>
-            <br></br>
-            <button onClick={()=>this.addClick()}>Submit</button>
-        </div>
-        <div className="login-wrapper">
-        <h2>LOG IN</h2>
-            <input id="newUsers2" textAlign='center' placeholder="Enter Username"/>
-            <br></br>
-            <input id="newPass2" textAlign='center' placeholder="Enter Password"/>
-            <br></br>
-            <Link class="button" to="/home" onClick={()=>this.addClick2()} >Submit</Link>
-        </div>
-    </section>
+      <div class="front-page">
+        <h1>Welcome to Nutritional Helper!</h1>
+        <section className="login-and-signup">
+          <div className="signup-wrapper">
+            <h2>SIGN UP</h2>
+              <input id="newUsers" textAlign='center' placeholder="Enter Username"/>
+              <br></br>
+              <input id="newPass" textAlign='center' placeholder="Enter Password"/>
+              <br></br>
+              <button onClick={()=>this.addClick()}>Submit</button>
+          </div>
+          <div className="login-wrapper">
+          <h2>LOG IN</h2>
+              <input id="newUsers2" textAlign='center' placeholder="Enter Username"/>
+              <br></br>
+              <input id="newPass2" textAlign='center' placeholder="Enter Password"/>
+              <br></br>
+              <Link class="button" to="/home" onClick={()=>this.addClick2()} >Submit</Link>
+          </div>
+        </section>
+      </div>
     );
   }
 };

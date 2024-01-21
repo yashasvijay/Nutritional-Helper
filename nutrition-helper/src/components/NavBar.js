@@ -18,9 +18,7 @@ function BasicNavBar() {
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="/macros">Macro Tracker</NavDropdown.Item>
               <NavDropdown.Item href="/allergens">Allergen Tracker</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+              <NavDropdown.Item>More features coming soon!</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

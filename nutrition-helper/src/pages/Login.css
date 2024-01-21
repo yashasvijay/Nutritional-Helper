@@ -1,5 +1,13 @@
 .front-page {
     display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.login-and-signup {
+    margin-top: -10px;
+    display: flex;
     justify-content: center;
     flex-direction: horizontal;
     align-items: center;
@@ -7,15 +15,14 @@
     height: 100%;
 }
 
-.front-page h2 {
+.login-and-signup h2 {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
 }
 
-.front-page button {
-    margin-bottom: 25px;
-    height: 38px;
+.login-and-signup button {
+    height: 35px;
     width: 100px;
     border-radius: 20px;
     background-color: #DDE5B6;
@@ -27,9 +34,6 @@
     text-decoration: none;
     padding: 8px 23px 8px 23px;
     border: 2px solid #333333;
-    margin-bottom: 25px;
-    height: 38px;
-    width: 100px;
     border-radius: 50px;
     background-color: #DDE5B6;
     font-size: 16px;
@@ -45,9 +49,29 @@
     margin-bottom: 25px;
 }
 
-.signup-wrapper {
-    margin-right: 300px;
+#newPass2 {
+    margin-bottom: 35px;
 }
+
+.signup-wrapper {
+    margin-top: -150px;
+    margin-right: 275px;
+}
+
+.login-wrapper {
+    margin-top: -150px;
+}
+
+.front-page h1 {
+    background-color: #F0EAD2;
+    color:#ADC178;
+    font-size: 48px;
+    background-color: #F0EAD2;
+    text-align: center;
+    padding-top: 150px;
+}
+
+
 
 
 
