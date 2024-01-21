@@ -2,3 +2,11 @@
     background-color: #F0EAD2;
     height: 100%;
 }
+
+.bg-myColor {
+    background-image: linear-gradient(to right, #ADC178,#DDE5B6, #F0EAD2);
+}
+
+.Macros h1 {
+    text-align: center;
+}

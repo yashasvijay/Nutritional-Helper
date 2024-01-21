@@ -1,4 +1,147 @@
+/*
 .bg-myColor {
     background-image: linear-gradient(to right, #ADC178,#DDE5B6, #F0EAD2);
 }
+*/
 
+.navigation-menu.expanded{
+    z-index: 1;
+}
+
+.navigation {
+    position: relative;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  padding: 0.5rem 0rem;
+  background-color: #F0EAD2;
+  color: black;
+  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+}
+
+@font-face {
+  font-family: brand-name;
+  src: url(../AbrilFatface-Regular.ttf);
+}
+
+.brand-name {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  margin-left: 0rem;
+  font-family: brand-name;
+  color: #7B3532;
+}
+
+.icon {
+  margin-left: .5rem;
+}
+
+.navigation-menu {
+  margin-left: auto;
+}
+
+.navigation-menu ul {
+  display: flex;
+  padding: 0;
+}
+
+.navigation-menu li {
+  list-style-type: none;
+  margin: 0 1rem;
+}
+
+.navigation-menu li a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.hamburger {
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #ADC178;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.hamburger:hover {
+  background-color: #DDE5B6;
+}
+
+@media screen and (max-width: 800px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navigation-menu ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: #F0EAD2;
+        border-top: 1px solid black;
+        display: none;
+    }
+
+    .navigation-menu li {
+        text-align: center;
+        margin: 0;
+    }
+
+    .navigation-menu li a {
+        color: black;
+        width: 100%;
+        padding: 1.5rem 0;
+    }
+
+    .navigation-menu li:hover {
+        background-color: #ADC178;
+    }
+
+    .navigation-menu.expanded ul {
+        display: block;
+      }
+}
+
+.Home{
+    font-family: brand-name;
+    margin-top: 15px;
+    color: #7B3532;
+}
+
+.Scanner{
+    font-family: brand-name;
+    margin-top: 15px;
+    color: #7B3532;
+  }
+
+  .Macros{
+    font-family: brand-name;
+    margin-top: 15px;
+    color: #7B3532;
+  }
+
+  .Allergens{
+    font-family: brand-name;
+    margin-top: 15px;
+    color: #7B3532;
+  }
+  
+  .Login{
+    font-family: brand-name;
+    margin-top: 15px;
+    margin-right: 10px;
+    color: #7B3532;
+  }

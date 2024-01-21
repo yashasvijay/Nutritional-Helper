@@ -1,6 +1,71 @@
-.Home {
-    background-color: #F0EAD2;
-    height: 100%;
+body {
+    font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.container {
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1rem;
+    background-color: #DDE5B6;
+}
+article h1 {
+    margin: 1rem 0;
+}
+
+.all{
+    background-color: #DDE5B6;
+}
+
+.big-question{
+    color: #9F4711;
+    padding: 1rem;
+}
+
+.big-question-response{
+    color: #9F4711
+}
+
+.center-container {
+    position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0; /* Ensure the center container is above the image */
+}
+
+.center-container::before,
+.center-container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px; /* Adjust the height of the lines as needed */
+    background-color: white;
+}
+
+.center-container::before {
+    top: 0;
+}
+
+.center-container::after {
+    bottom: 0;
+}
+
+.center-container img {
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain the image aspect ratio */
+    z-index: 0; /* Lower z-index for the image */
+}
+
+/* Your existing styles for hamburger menu */
+
+/* Media query for smaller screens */
+    @media screen and (max-width: 100px) {
+    .center-container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
 }
 
