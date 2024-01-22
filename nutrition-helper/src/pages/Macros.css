@@ -1,5 +1,4 @@
 .Macros {
-    background-color: #F0EAD2;
     height: 100%;
 }
 
@@ -9,4 +8,17 @@
 
 .Macros h1 {
     text-align: center;
+}
+
+.macros {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #DDE5B6;
+}
+
+Footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

@@ -18,6 +18,9 @@ article h1 {
 
 .all{
     background-color: #DDE5B6;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .big-question{
@@ -67,5 +70,11 @@ article h1 {
     .center-container {
         flex-direction: column; /* Stack elements vertically on smaller screens */
     }
+}
+
+Footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 

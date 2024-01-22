@@ -83,7 +83,7 @@ export default function Navbar() {
             <a className="Allergens" href="/allergens">Allergen Tracker</a>
           </li>
           <li>
-            <a className="Login" href="/">Login</a>
+            <a className="Login" href="/">Logout</a>
           </li>
         </ul>
       </div>
