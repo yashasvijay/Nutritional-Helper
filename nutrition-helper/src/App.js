@@ -45,7 +45,7 @@ function calorieParse(text) {
     let output = "";
     let macroList = text.toLowerCase().split("\n");
     for (let i = 0; i < macroList.length; i++) {
-        if (macroList[i].indexOf("calories") !== -1) {
+        if (macroList[i].indexOf("calories") !== -1 && i < 10) {
             let seperatedList = macroList[i].split(" ");
             for (let j = 0; j < seperatedList.length; j++) {
                 if (seperatedList[j].match("[0-9]+")) {
