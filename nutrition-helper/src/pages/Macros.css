@@ -1,0 +1,24 @@
+.Macros {
+    height: 100%;
+}
+
+.bg-myColor {
+    background-image: linear-gradient(to right, #ADC178,#DDE5B6, #F0EAD2);
+}
+
+.Macros h1 {
+    text-align: center;
+}
+
+.macros {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #DDE5B6;
+}
+
+Footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

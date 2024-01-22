@@ -1,3 +1,10 @@
+/*
+.Scanner {
+    background-color: #F0EAD2;
+    height: 100%;
+}
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -7,13 +14,11 @@
 
 @font-face {
     font-family: brand-name;
-    src: url(../public/AbrilFatface-Regular.ttf);
+    src: url(../AbrilFatface-Regular.ttf);
 }
 
 .Scanner{
-   /* min-height: 100vh; */
     position: relative;
-   /* background-color: #313131; */
 }
 
 .camera{
@@ -42,17 +47,17 @@ video {
     height: auto;
 }
 
-button{
-    /* position: absolute; */
+.Scanner button{
+    position: absolute;
     bottom: 20px;
-    /* left: 20px; */
-    
+    left: 20px;
+
     appearance: none;
     border: none;
     outline: none;
 
     padding: 8px 16px;
-    background-image: linear-gradient(to right, #ADC178 50%, #DDE5B6 50%);
+    background-image: linear-gradient(to right, #844FFF 50%, #FF4F84 50%);
     background-position: 0%;
     background-size: 200%;
     color: #FFF;
@@ -62,7 +67,7 @@ button{
     cursor: pointer;
 }
 
-button:hover {
+.Scanner button:hover {
     background-position: 100%;
 }
 

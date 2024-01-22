@@ -1,0 +1,72 @@
+.front-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.login-and-signup {
+    margin-top: -10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: horizontal;
+    align-items: center;
+    background-color: #F0EAD2;
+    height: 100%;
+}
+
+.login-and-signup h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.login-and-signup button {
+    height: 35px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: #DDE5B6;
+    font-size: 16px;
+    color: black;
+}
+
+.button {
+    text-decoration: none;
+    padding: 8px 23px 8px 23px;
+    border: 2px solid #333333;
+    border-radius: 50px;
+    background-color: #DDE5B6;
+    font-size: 16px;
+    color: black;
+}
+
+.front-page input {
+    box-sizing: border-box;
+    height: 39px;
+    width: 300px;
+    border: 1px solid #E6E6E6;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+#newPass2 {
+    margin-bottom: 35px;
+}
+
+.signup-wrapper {
+    margin-top: -150px;
+    margin-right: 275px;
+}
+
+.login-wrapper {
+    margin-top: -150px;
+}
+
+.front-page h1 {
+    background-color: #F0EAD2;
+    color:#ADC178;
+    font-size: 48px;
+    background-color: #F0EAD2;
+    text-align: center;
+    padding-top: 150px;
+}

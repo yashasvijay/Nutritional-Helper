@@ -1,4 +1,22 @@
-import BasicNavBar from "./NavBar";
+/*
+import BasicNavBar from "../components/NavBar";
+import "./Scanner.css";
+
+function Scanner() {
+    return (
+        <>
+            <BasicNavBar />
+            <div class="Scanner">
+                <h1>Scanner</h1>
+            </div>
+        </>
+    )
+}
+
+export default Scanner;
+*/
+
+import BasicNavBar from "../components/NavBar";
 import "./Scanner.css";
 import React, {useRef, useEffect, useState} from "react";
 
@@ -37,6 +55,17 @@ function Scanner() {
         ctx.drawImage(video, 0, 0, width,
         height);
         setHasPhoto(true);
+
+        // Downloads the taken image
+        const image = new Image();
+
+        image.src = photo.toDataURL();
+
+        const link = document.createElement('a');
+
+        link.href = image.src;
+        link.download = 'photo_image.png';
+        link.click();
     }
 
     const closePhoto = () => {

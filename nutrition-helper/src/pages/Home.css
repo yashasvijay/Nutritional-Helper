@@ -1,33 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400&display=swap");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #DDE5B6;
 }
-
 .container {
   max-width: 90%;
   margin-right: auto;
   margin-left: auto;
   padding: 1rem;
-  background-color: #DDE5B6;
 }
-
 article h1 {
   margin: 1rem 0;
 }
 
 .all{
   background-color: #DDE5B6;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .big-question{
@@ -37,6 +30,10 @@ article h1 {
 
 .big-question-response{
   color: #9F4711
+}
+
+.bq1{
+  color: #7B3532;
 }
 
 .center-container {
@@ -73,8 +70,14 @@ article h1 {
 /* Your existing styles for hamburger menu */
 
 /* Media query for smaller screens */
-@media screen and (max-width: 100px) {
+  @media screen and (max-width: 100px) {
   .center-container {
-    flex-direction: column; /* Stack elements vertically on smaller screens */
+      flex-direction: column; /* Stack elements vertically on smaller screens */
   }
+}
+
+Footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
