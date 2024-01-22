@@ -55,6 +55,17 @@ function Scanner() {
         ctx.drawImage(video, 0, 0, width,
         height);
         setHasPhoto(true);
+
+        // Downloads the taken image
+        const image = new Image();
+
+        image.src = photo.toDataURL();
+
+        const link = document.createElement('a');
+
+        link.href = image.src;
+        link.download = 'photo_image.png';
+        link.click();
     }
 
     const closePhoto = () => {
