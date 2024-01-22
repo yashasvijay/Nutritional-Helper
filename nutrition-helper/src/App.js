@@ -12,6 +12,7 @@ class App extends Component{
 
   componentDidMount(){
     this.refreshItems();
+    this.refreshItems2();
   }
 
   async refreshItems(){
@@ -42,7 +43,6 @@ async addClick(){
   
   var newPass=document.getElementById("newPass").value;
   data.append("newPass",newPass);
-
   const isDuplicate = this.state.items.some(item => item.username === newUsers);
   if(isDuplicate){
     alert("Username Taken");
@@ -69,6 +69,13 @@ async deleteClick(id){
   .then((result)=>{
     alert(result);
     this.refreshItems();
+  })
+}
+
+async refreshItems2(){
+  fetch("http://localhost:8000/getitems2").then(response=>response.json())
+  .then(data2=>{
+    this.setState({items:data2});
   })
 }
 
