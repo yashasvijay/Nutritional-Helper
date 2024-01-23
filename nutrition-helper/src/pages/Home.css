@@ -29,11 +29,13 @@ article h1 {
 }
 
 .big-question-response{
+  padding-top: 1%;
   color: #9F4711
 }
 
 .bq1{
   color: #7B3532;
+  padding-right: 5%;
 }
 
 .center-container {
@@ -80,4 +82,16 @@ Footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.nutritionicon2{
+  display:flex;
+}
+
+.allergenicon{
+  display:flex;
+}
+
+.planningicon{
+  display:flex;
 }

@@ -5,6 +5,7 @@ import Macros from '../pages/Macros';
 import Home from '../pages/Home';
 import Scanner from '../pages/Scanner.js';
 import './App.css';
+import AnalyzeImage from '../pages/AnalyzeImage.js'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route exact path="/scanner" element={<Scanner />} />
         <Route exact path="/allergens" element={<Allergens />} />
         <Route exact path="/macros" element={<Macros />} />
+        <Route exact path="/analyze" element={<AnalyzeImage />} />
       </Routes>
     </>
   )

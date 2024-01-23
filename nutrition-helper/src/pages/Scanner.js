@@ -19,10 +19,12 @@ export default Scanner;
 import BasicNavBar from "../components/NavBar";
 import "./Scanner.css";
 import React, {useRef, useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 function Scanner() {
     const videoRef = useRef(null);
     const photoRef = useRef(null);
+    const navigate = useNavigate();
 
     const [hasPhoto, setHasPhoto] = useState(false);
 
@@ -42,8 +44,8 @@ function Scanner() {
     }
 
     const takePhoto = () => {
-        const width = 414;
-        const height = width/(16/9);
+        const width = 1920;
+        const height = 1080;
 
         let video = videoRef.current;
         let photo = photoRef.current;
@@ -52,7 +54,7 @@ function Scanner() {
         photo.height = height;
 
         let ctx = photo.getContext('2d');
-        ctx.drawImage(video, 0, 0, width,
+        ctx.drawImage(video, 1350, 0, width, height, 0, 0, width,
         height);
         setHasPhoto(true);
 
@@ -66,6 +68,8 @@ function Scanner() {
         link.href = image.src;
         link.download = 'photo_image.png';
         link.click();
+        
+        navigate("/analyze");
     }
 
     const closePhoto = () => {
