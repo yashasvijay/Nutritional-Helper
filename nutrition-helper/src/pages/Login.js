@@ -32,7 +32,7 @@ async addClick2(){
     <Navigate to="/home" replace={true} />
   }
   else {
-    alert("Username/Password Not Found");
+    alert("Logged In!");
   }
 }
 

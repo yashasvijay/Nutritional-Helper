@@ -7,7 +7,7 @@ import '../components/logic.js';
 
 import BasicNavBar from '../components/NavBar';
 
- var spacer = " > ";
+ var spacer = "  ==>  ";
 
 const App = () => {
  const [isLoading, setIsLoading] = React.useState(false);

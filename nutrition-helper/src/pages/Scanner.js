@@ -1,21 +1,3 @@
-/*
-import BasicNavBar from "../components/NavBar";
-import "./Scanner.css";
-
-function Scanner() {
-    return (
-        <>
-            <BasicNavBar />
-            <div class="Scanner">
-                <h1>Scanner</h1>
-            </div>
-        </>
-    )
-}
-
-export default Scanner;
-*/
-
 import BasicNavBar from "../components/NavBar";
 import "./Scanner.css";
 import React, {useRef, useEffect, useState} from "react";
@@ -44,8 +26,8 @@ function Scanner() {
     }
 
     const takePhoto = () => {
-        const width = 414;
-        const height = width/(16/9);
+        const width = 1920;
+        const height = 1080;
 
         let video = videoRef.current;
         let photo = photoRef.current;
@@ -54,7 +36,7 @@ function Scanner() {
         photo.height = height;
 
         let ctx = photo.getContext('2d');
-        ctx.drawImage(video, 0, 0, width,
+        ctx.drawImage(video, 1050, 0, width, height, 0, 0, width,
         height);
         setHasPhoto(true);
 
