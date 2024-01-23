@@ -45,6 +45,24 @@ function totalFatParse(text) {
     return output;
 }
 
+function fatPercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("total fat") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-Z]+") && seperatedList[j].indexOf("%") !== -1){
+                    digitizedString = getDigits(seperatedList[j]);
+                    output = parseInt(digitizedString);
+                }
+            }
+        }
+    }
+    return output;
+}
+
 function cholesterolParse(text) {
     let output = 0;
     let macroList = text.toLowerCase().split("\n");

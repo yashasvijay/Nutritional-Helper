@@ -7,6 +7,7 @@ import './logic.js';
 import { calorieParse, totalFatParse, cholesterolParse, sodiumParse, carbohydrateParse, totalSugarParse, proteinParse, ironParse, potassiumParse } from "./logic.js";
  < reference path = "../nutrition-helper/src/logic.js" />
 
+ var spacer = " > ";
 
 const App = () => {
  const [isLoading, setIsLoading] = React.useState(false);
@@ -29,12 +30,12 @@ const App = () => {
        console.error(err);
      })
      .then((result) => {
-       setText("Calories: " + calorieParse(result.data.text).toString()
-       + "\n" + "Total Fats: " + totalFatParse(result.data.text).toString() +  "g\n"
-       + "Cholesterol: " + cholesterolParse(result.data.text).toString() + "mg\n" + "Sodium: " + sodiumParse(result.data.text).toString() + "mg\n"
-       + "Carbohydrate: " + carbohydrateParse(result.data.text).toString() + "g\n" + "Total Sugars: " + totalSugarParse(result.data.text).toString() + "g\n"
-       + "Protein: " + proteinParse(result.data.text).toString() + "g\n" + "Iron: " + ironParse(result.data.text).toString() + "mg\n"
-       + "Potassium: " + potassiumParse(result.data.text).toString() + "mg"
+       setText("MACROS - AMT - %DAILY\n\n" + "Calories: " + calorieParse(result.data.text).toString()
+       + "\n" + "Total Fats: " + totalFatParse(result.data.text).toString() + "g" + spacer + fatPercent(result.data.text) + "%\n" 
+       + "Cholesterol: " + cholesterolParse(result.data.text).toString() + "mg" + spacer + cholesterolPercent(result.data.text) + "%\n" + "Sodium: " + sodiumParse(result.data.text).toString() + "mg" + spacer + sodiumPercent(result.data.text) + "%\n"
+       + "Carbs: " + carbohydrateParse(result.data.text).toString() + "g" + spacer + carbohydratePercent(result.data.text) + "%\n" + "Fiber: " + fiberParse(result.data.text).toString() + "g" + spacer + fiberPercent(result.data.text) + "%\n" + "Total Sugars: " + totalSugarParse(result.data.text).toString() + "g" + spacer + sugarPercent(result.data.text) + "%\n"
+       + "Protein: " + proteinParse(result.data.text).toString() + "g\n" + "Vitamin D: " + vitaminDParse(result.data.text).toString() + "mcg" + spacer + vitaminDPercent(result.data.text) + "%\n" + "Calcium: " + calciumParse(result.data.text).toString() + "mg" + spacer + calciumPercent(result.data.text) + "%\n" + "Iron: " + ironParse(result.data.text).toString() + "mg" + spacer + ironPercent(result.data.text) + "%\n"
+       + "Potassium: " + potassiumParse(result.data.text).toString() + "mg" + spacer + potassiumPercent(result.data.text) + "%\n"
        );
        setIsLoading(false);
 
@@ -97,6 +98,26 @@ function totalFatParse(text) {
     return output;
 }
 
+function fatPercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("total fat") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-z]+") && seperatedList[j].indexOf("%") !== -1) {
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
 
 function cholesterolParse(text) {
     let output = 0;
@@ -107,6 +128,26 @@ function cholesterolParse(text) {
             let seperatedList = macroList[i].split(" ");
             for(let j = 0; j < seperatedList.length; j++) {
                 if (!isAlphabetic(seperatedList[j]) && seperatedList[j].indexOf("%") === -1){
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
+function cholesterolPercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("cholesterol") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-z]+") && seperatedList[j].indexOf("%") !== -1) {
                     let matches = seperatedList[j].match(/(\d+)/);
                     if (matches) {
                         output = matches[0];
@@ -138,6 +179,26 @@ function sodiumParse(text) {
     return output;
 }
 
+function sodiumPercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("sodium") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-z]+") && seperatedList[j].indexOf("%") !== -1) {
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
 function carbohydrateParse(text) {
     let output = 0;
     let macroList = text.toLowerCase().split("\n");
@@ -147,6 +208,66 @@ function carbohydrateParse(text) {
             let seperatedList = macroList[i].split(" ");
             for(let j = 0; j < seperatedList.length; j++) {
                 if (!isAlphabetic(seperatedList[j]) && seperatedList[j].indexOf("%") === -1){
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
+function carbohydratePercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("carbohydrate") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-z]+") && seperatedList[j].indexOf("%") !== -1) {
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
+function fiberParse(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("fiber") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!isAlphabetic(seperatedList[j]) && seperatedList[j].indexOf("%") === -1){
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
+function fiberPercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("fiber") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-z]+") && seperatedList[j].indexOf("%") !== -1) {
                     let matches = seperatedList[j].match(/(\d+)/);
                     if (matches) {
                         output = matches[0];
@@ -178,6 +299,26 @@ function totalSugarParse(text) {
     return output;
 }
 
+function sugarPercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("added sugar") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-z]+") && seperatedList[j].indexOf("%") !== -1) {
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
 function proteinParse(text) {
     let output = 0;
     let macroList = text.toLowerCase().split("\n");
@@ -187,6 +328,86 @@ function proteinParse(text) {
             let seperatedList = macroList[i].split(" ");
             for(let j = 0; j < seperatedList.length; j++) {
                 if (!isAlphabetic(seperatedList[j]) && seperatedList[j].indexOf("%") === -1){
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
+function vitaminDParse(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("vitamin d") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!isAlphabetic(seperatedList[j]) && seperatedList[j].indexOf("%") === -1){
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
+function vitaminDPercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("vitamin d") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-z]+") && seperatedList[j].indexOf("%") !== -1) {
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
+function calciumParse(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("calcium") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!isAlphabetic(seperatedList[j]) && seperatedList[j].indexOf("%") === -1){
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
+function calciumPercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("calcium") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-z]+") && seperatedList[j].indexOf("%") !== -1) {
                     let matches = seperatedList[j].match(/(\d+)/);
                     if (matches) {
                         output = matches[0];
@@ -218,6 +439,26 @@ function ironParse(text) {
     return output;
 }
 
+function ironPercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("iron") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-z]+") && seperatedList[j].indexOf("%") !== -1) {
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
 function potassiumParse(text) {
     let output = 0;
     let macroList = text.toLowerCase().split("\n");
@@ -237,6 +478,28 @@ function potassiumParse(text) {
     }
     return output;
 }
+
+function potassiumPercent(text) {
+    let output = 0;
+    let macroList = text.toLowerCase().split("\n");
+    let digitizedString = "";
+    for(let i = 0; i < macroList.length; i++){
+        if(macroList[i].indexOf("potassium") !== -1) {
+            let seperatedList = macroList[i].split(" ");
+            for(let j = 0; j < seperatedList.length; j++) {
+                if (!seperatedList[j].match("[a-zA-z]+") && seperatedList[j].indexOf("%") !== -1) {
+                    let matches = seperatedList[j].match(/(\d+)/);
+                    if (matches) {
+                        output = matches[0];
+                    }
+                }
+            }
+        }
+    }
+    return output;
+}
+
+
  return (
    <div className="container" style={{ height: '100vh' }}>
      <div className="row h-100">
