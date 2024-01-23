@@ -43,7 +43,7 @@ app.delete("/deleteitems",(request,response)=>{
 var DATABASENAME2="food";
 var database2;
 
-const config = require("../nutrition-helper/src/App.js");
+const config = require("../nutrition-helper/src/components/App.js");
 
 app.listen(8000,()=>{
     Mongoclient.connect(CONNECTION_STRING,(error,client)=>{
