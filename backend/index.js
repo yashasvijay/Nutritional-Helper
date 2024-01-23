@@ -8,7 +8,7 @@ app.use(cors());
 
 var CONNECTION_STRING="mongodb+srv://user:careerlaunch@cluster0.gu4zxwb.mongodb.net/";
 
-var DATABASENAME="food";
+var DATABASENAME="users";
 var database;
 
 app.listen(9000,()=>{
@@ -28,8 +28,8 @@ app.post('/additems',multer().none(),(request,response)=>{
     database.collection("items").count({},function(error,numOfDocs){
         database.collection("items").insertOne({
             id:(numOfDocs+1).toString(),
-            name:request.body.newItems,
-            calories:request.body.newCal
+            username:request.body.newUsers,
+            password:request.body.newPass
         });
         response.json("Added Successfully");
     })
@@ -40,4 +40,36 @@ app.delete("/deleteitems",(request,response)=>{
         id:request.query.id
     });
     response.json("Deleted Successfully");
+})
+
+
+//SECOND DATABASE FOR FOOD
+var DATABASENAME2="food";
+var database2;
+
+const config = require("../nutrition-helper/src/App.js");
+
+app.listen(8000,()=>{
+    Mongoclient.connect(CONNECTION_STRING,(error,client)=>{
+        database2=client.db(DATABASENAME2);
+
+        database2.collection("items").count({},function(error,numOfDocs){
+            database2.collection("items").insertOne({
+                id:(numOfDocs+1).toString(),
+                calories: config.calories,
+                fat: config.fat,
+                cholesterol: config.cholesterol,
+                sodium: config.sodium,
+                carbohydrate: config.carbohydrate,
+                sugar: config.sugar,
+                protein: config.protein,
+                iron: config.iron,
+                potasium: config.potassium
+            });
+
+        console.log("Mongo DB Connection Successful (2)");
+
+        })
+
+    });
 })
