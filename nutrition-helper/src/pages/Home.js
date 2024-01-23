@@ -1,6 +1,6 @@
 import BasicNavBar from "../components/NavBar";
 import "./Home.css";
-import banner from '../images/banner.png';
+import banner2 from '../images/banner2.png';
 import Footer from '../components/Footer';
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
         <div className="all">
             <BasicNavBar />
             <div class="center-container">
-            <img src={banner} alt="Description" />
+            <img src={banner2} alt="Description" />
             </div>
             <div className="container">
                 <h1 className="big-question">Our Solutions </h1>
