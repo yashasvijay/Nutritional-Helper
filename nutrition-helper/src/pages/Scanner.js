@@ -54,7 +54,7 @@ function Scanner() {
         photo.height = height;
 
         let ctx = photo.getContext('2d');
-        ctx.drawImage(video, 1350, 0, width, height, 0, 0, width,
+        ctx.drawImage(video, 1050, 0, width, height, 0, 0, width,
         height);
         setHasPhoto(true);
 
