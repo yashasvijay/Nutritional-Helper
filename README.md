@@ -99,7 +99,7 @@ Don't forget to give the project a star! Thanks again!
 
 Rachel Kim - yseo7045@gmail.com
 Yashas Vijay
-Alex Cruz
+Alex Cruz - alexcruz@umd.edu
 Mahathi Chinthapalli
 
 Project Link: [https://github.com/yashasvijay/Nutritional-Helper](https://github.com/yashasvijay/Nutritional-Helper)
