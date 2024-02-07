@@ -17,7 +17,7 @@
   </a>
   <br />
 <a href="https://www.flaticon.com/free-icons/nutritionist" title="nutritionist icons">
-   Nutritionist icons created by Freepik - Flaticon
+   
   </a>
 
 <h3 align="center">Nutrition Helper</h3>
