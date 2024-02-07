@@ -23,7 +23,7 @@
 <h3 align="center">Nutrition Helper</h3>
 
   <p align="center">
-    A nutrition helper designed to help users track macros and allergens by scanning their nutrition labels.
+    Designed to help users track macros and allergens by scanning their nutrition labels.
     <br />
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
     ·
